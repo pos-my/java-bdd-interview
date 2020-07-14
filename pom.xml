@@ -17,6 +17,7 @@
     <cucumber.version>6.2.2</cucumber.version>
     <junit.jupiter.version>5.6.2</junit.jupiter.version>
     <selenium.version>3.141.59</selenium.version>
+    <webDriverManager.version>4.0.0</webDriverManager.version>
   </properties>
 
   <dependencies>
@@ -43,6 +44,11 @@
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-chrome-driver</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -73,6 +79,11 @@
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-chrome-driver</artifactId>
         <version>${selenium.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.github.bonigarcia</groupId>
+        <artifactId>webdrivermanager</artifactId>
+        <version>${webDriverManager.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
