@@ -72,6 +72,12 @@
         <groupId>de.monochromata.cucumber</groupId>
         <artifactId>reporting-plugin</artifactId>
         <version>${cucumber-reporting-plugin.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-core</artifactId>
+          </exclusion>
+        </exclusions>
       </dependency>
       <dependency>
         <groupId>io.cucumber</groupId>
