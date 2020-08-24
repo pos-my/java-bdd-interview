@@ -19,7 +19,7 @@
     <cucumber-reporting-plugin.version>4.0.74</cucumber-reporting-plugin.version>
     <junit.jupiter.version>5.6.2</junit.jupiter.version>
     <selenium.version>3.141.59</selenium.version>
-    <webDriverManager.version>4.1.0</webDriverManager.version>
+    <webDriverManager.version>4.2.0</webDriverManager.version>
   </properties>
 
   <dependencies>
