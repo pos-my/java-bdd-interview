@@ -15,6 +15,17 @@ BDD automated application that will be used by our candidates.
   - Candidates should implement provided scenario with Cucumber and Selenium
   - Implementation should demonstrate understanding of Object Oriented Programming (OOP)
   
+### Scenario
+```text
+Given that I am on Google
+I want to search about Covid-19 in Malaysia
+I will key in covid 19 in Malaysia and click on Google Search button
+I will reach results page
+I will see Top stories section
+I will see Common questions section
+I will click on first result for Top results and will leave Google website
+```
+
 ## Nice to Have
   - Demonstrate understanding of [SOLID Principle][1]
   - Demonstrate understanding of Design Pattern
