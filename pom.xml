@@ -16,7 +16,7 @@
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
     <cucumber.version>6.9.1</cucumber.version>
-    <cucumber-reporting-plugin.version>4.0.91</cucumber-reporting-plugin.version>
+    <cucumber-reporting-plugin.version>4.0.94</cucumber-reporting-plugin.version>
     <junit.jupiter.version>5.7.0</junit.jupiter.version>
     <selenium.version>3.141.59</selenium.version>
     <webDriverManager.version>4.3.0</webDriverManager.version>
