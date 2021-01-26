@@ -12,7 +12,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.ant-run-plugin.version>3.0.0</maven.ant-run-plugin.version>
+    <maven.surefire-plugin.version>2.22.2</maven.surefire-plugin.version>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
     <cucumber.version>6.9.1</cucumber.version>
@@ -44,9 +44,8 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.junit.platform</groupId>
-      <artifactId>junit-platform-console</artifactId>
-      <version>1.7.0</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -95,6 +94,11 @@
         <version>${junit.jupiter.version}</version>
       </dependency>
       <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>${junit.jupiter.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
         <version>${selenium.version}</version>
@@ -117,40 +121,16 @@
       <plugins>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-antrun-plugin</artifactId>
-          <version>${maven.ant-run-plugin.version}</version>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${maven.surefire-plugin.version}</version>
         </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <executions>
-          <execution>
-            <!-- Work around. Surefire does not use JUnits Test Engine discovery functionality.
-                 Alternatively annotate a class with `io.cucumber.junit.platform.engine.Cucumber`
-                 to mark its package for the discovery of feature files.  -->
-            <id>CLI-test</id>
-            <phase>integration-test</phase>
-            <goals>
-              <goal>run</goal>
-            </goals>
-            <configuration>
-              <target unless="maven.test.skip">
-                <echo message="Running JUnit Platform CLI" />
-                <java classname="org.junit.platform.console.ConsoleLauncher" fork="true" failonerror="true" newenvironment="true" maxmemory="512m" classpathref="maven.test.classpath">
-                  <arg value="--include-engine" />
-                  <arg value="cucumber" />
-                  <arg value="--scan-classpath" />
-                  <arg value="${project.build.testOutputDirectory}" />
-                  <arg value="--reports-dir" />
-                  <arg value="${project.build.directory}/cucumber-reports" />
-                </java>
-              </target>
-            </configuration>
-          </execution>
-        </executions>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.2</version>
       </plugin>
     </plugins>
   </build>
