@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>posmy.interview.qa</groupId>
@@ -12,16 +12,22 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.surefire-plugin.version>2.22.2</maven.surefire-plugin.version>
+    <maven.ant-run-plugin.version>3.0.0</maven.ant-run-plugin.version>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
     <cucumber.version>6.9.1</cucumber.version>
+    <cucumber-reporting-plugin.version>4.0.94</cucumber-reporting-plugin.version>
     <junit.jupiter.version>5.7.0</junit.jupiter.version>
     <selenium.version>3.141.59</selenium.version>
     <webDriverManager.version>4.3.1</webDriverManager.version>
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>de.monochromata.cucumber</groupId>
+      <artifactId>reporting-plugin</artifactId>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
@@ -38,8 +44,9 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-console</artifactId>
+      <version>1.7.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -57,10 +64,34 @@
       <artifactId>webdrivermanager</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>info.cukes</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>1.2.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>info.cukes</groupId>
+      <artifactId>cucumber-junit</artifactId>
+      <version>1.2.0</version>
+    </dependency>
+
   </dependencies>
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>de.monochromata.cucumber</groupId>
+        <artifactId>reporting-plugin</artifactId>
+        <version>${cucumber-reporting-plugin.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-core</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
       <dependency>
         <groupId>io.cucumber</groupId>
         <artifactId>cucumber-java</artifactId>
@@ -74,11 +105,6 @@
       <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-api</artifactId>
-        <version>${junit.jupiter.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-engine</artifactId>
         <version>${junit.jupiter.version}</version>
       </dependency>
       <dependency>
@@ -104,16 +130,40 @@
       <plugins>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>${maven.surefire-plugin.version}</version>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>${maven.ant-run-plugin.version}</version>
         </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
       <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.2</version>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <!-- Work around. Surefire does not use JUnits Test Engine discovery functionality.
+                 Alternatively annotate a class with `io.cucumber.junit.platform.engine.Cucumber`
+                 to mark its package for the discovery of feature files.  -->
+            <id>CLI-test</id>
+            <phase>integration-test</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target unless="maven.test.skip">
+                <echo message="Running JUnit Platform CLI" />
+                <java classname="org.junit.platform.console.ConsoleLauncher" fork="true" failonerror="true" newenvironment="true" maxmemory="512m" classpathref="maven.test.classpath">
+                  <arg value="--include-engine" />
+                  <arg value="cucumber" />
+                  <arg value="--scan-classpath" />
+                  <arg value="${project.build.testOutputDirectory}" />
+                  <arg value="--reports-dir" />
+                  <arg value="${project.build.directory}/cucumber-reports" />
+                </java>
+              </target>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
