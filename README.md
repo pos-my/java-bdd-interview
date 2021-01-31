@@ -31,5 +31,12 @@ Candidates are allowed to add or remove any dependencies _except_ Cucumber JVM a
   - Demonstrate understanding of [SOLID Principle][1]
   - Demonstrate understanding of Design Patterns
   
+## Submission
+Candidates can submit their work via:
+  - [Pull Request][3] (preferred)
+  - Cloud storage of their choice
+  - E-mail
+  
 [1]: https://en.wikipedia.org/wiki/SOLID
 [2]: ./pom.xml#L24
+[3]: ./pulls
