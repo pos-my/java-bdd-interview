@@ -57,6 +57,15 @@
       <artifactId>webdrivermanager</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.github.coronium-framework</groupId>
+      <artifactId>coronium</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+      <dependency>
+          <groupId>org.seleniumhq.selenium</groupId>
+          <artifactId>selenium-chrome-driver</artifactId>
+      </dependency>
   </dependencies>
 
   <dependencyManagement>
@@ -95,6 +104,13 @@
         <groupId>io.github.bonigarcia</groupId>
         <artifactId>webdrivermanager</artifactId>
         <version>${webDriverManager.version}</version>
+      </dependency>
+
+      <!-- Addons -->
+      <dependency>
+        <groupId>com.github.frameworkium</groupId>
+        <artifactId>frameworkium-core</artifactId>
+        <version>2.4.2</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
