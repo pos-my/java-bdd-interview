@@ -32,4 +32,4 @@ Candidates are allowed to add or remove any dependencies _except_ Cucumber JVM a
   - Demonstrate understanding of Design Patterns
   
 [1]: https://en.wikipedia.org/wiki/SOLID
-[2]: ./pom.xml
+[2]: ./pom.xml#L24
