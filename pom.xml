@@ -8,7 +8,7 @@
   <artifactId>java-bdd-interview</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>java-bdd-interview</name>
+  <name>POS MY: Java BDD Interview</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
