@@ -39,4 +39,4 @@ Candidates can submit their work via:
   
 [1]: https://en.wikipedia.org/wiki/SOLID
 [2]: ./pom.xml#L24
-[3]: ./pulls
+[3]: https://github.com/pos-my/java-bdd-interview/pulls
