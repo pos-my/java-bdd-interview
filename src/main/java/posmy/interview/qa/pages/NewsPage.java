@@ -19,11 +19,8 @@ public class NewsPage extends AutoPage<NewsPage> {
         return newsHeadline.getText();
     }
 
-
     @Step("Close browser")
     public void closeBrowser(){
-
         //Close driver and browser
-        driver.close();
-    }
+        driver.close(); }
 }

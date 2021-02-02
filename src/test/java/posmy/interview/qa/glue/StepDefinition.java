@@ -1,68 +1,75 @@
 package posmy.interview.qa.glue;
 
-import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.PageFactory;
 import posmy.interview.qa.pages.GoogleLandingPage;
 import posmy.interview.qa.pages.NewsPage;
 import posmy.interview.qa.pages.ResultPage;
+import ru.yandex.qatools.allure.annotations.Step;
+
+import static com.google.common.truth.Truth.assertThat;
 
 public class StepDefinition {
-
-    WebDriver driver;
-
-   @Before("@browser")
-    public void createDriver() {
-        driver = new ChromeDriver();
-    }
-
+    @Step
     @Given("that I am on Google")
-    public void thatIamOnGoogle(){
-        driver.get("https://www.google.com/");
+    public void open() {
+        GoogleLandingPage.open();
     }
 
+    @Step
     @Then("I want to search about {word} in Malaysia")
     public boolean iWantToSearchAboutCovid19InMalaysia(String word){
        return new GoogleLandingPage().searchboxIsDisplayed();
     }
 
+    @Step
     @Then("I will key in covid {int} in Malaysia")
-    public void iWillKeyInCovid19InMalaysia(int number) {
+    public void iWillKeyInCovid19InMalaysia(String cases) {
         String COVID_19 = "covid 19 in Malaysia";
         new GoogleLandingPage()
                 .setSearch(COVID_19);
     }
 
+    @Step
     @And("click on Google Search button")
     public void andClickOnGoogleSearchButton(){
         new GoogleLandingPage().clickGoogleSearchButton();
     }
 
+    @Step
     @Then("I will reach results page")
     public void iWillReachResultsPage(){
         new ResultPage().totalMatchingResultsIsDisplayed();
     }
 
+    @Step
     @Then("I will see Top stories section")
     public void iWillSeeTopStoriesSection(){
         new ResultPage().topStoriesSectionIsDisplayed();
     }
 
+    @Step
     @Then("I will see Common questions section")
-    public String iWillSeeCommonQuestionsSection(){
-       return new ResultPage().getCommonQuestionHeader();
+    public void iWillSeeCommonQuestionsSection(){
+       String commonQuestion = new ResultPage().getCommonQuestionHeader();
+        assertThat(commonQuestion).isEqualTo("Common Questions");
     }
 
+    @Step
     @Then("I will click on first result for Top results")
     public void iWillClickFirstResultForTopResult(){
-        new ResultPage().selectFirstStory();
+        //Get title for first story
+        String firstStory = new ResultPage().getFirstStoryTitle();
+      //Click first Story
+      new ResultPage().selectFirstStory();
+
+      String headerTitle =  new NewsPage().getNewsTitle();
+      assertThat(headerTitle).isEqualTo(firstStory);
     }
 
-    @And("will leave Google Website")
+    @Step
+    @Then("will leave Google website")
     public void andWillLeaveGoogleWebsite(){
         new NewsPage().closeBrowser();
     }
