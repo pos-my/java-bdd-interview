@@ -120,13 +120,6 @@
         <artifactId>webdrivermanager</artifactId>
         <version>${webDriverManager.version}</version>
       </dependency>
-
-      <!-- Addons -->
-      <dependency>
-        <groupId>com.github.frameworkium</groupId>
-        <artifactId>frameworkium-core</artifactId>
-        <version>2.4.2</version>
-      </dependency>
     </dependencies>
   </dependencyManagement>
 
