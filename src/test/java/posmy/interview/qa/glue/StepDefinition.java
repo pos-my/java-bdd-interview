@@ -19,8 +19,9 @@ public class StepDefinition {
 
     @Step
     @Then("I want to search about {word} in Malaysia")
-    public boolean iWantToSearchAboutCovid19InMalaysia(String word){
-       return new GoogleLandingPage().searchboxIsDisplayed();
+    public boolean iWantToSearchAboutCovid19InMalaysia(){
+       new GoogleLandingPage().searchboxIsDisplayed();
+       return true;
     }
 
     @Step
@@ -39,14 +40,16 @@ public class StepDefinition {
 
     @Step
     @Then("I will reach results page")
-    public void iWillReachResultsPage(){
+    public boolean iWillReachResultsPage(){
         new ResultPage().totalMatchingResultsIsDisplayed();
+        return true;
     }
 
     @Step
     @Then("I will see Top stories section")
-    public void iWillSeeTopStoriesSection(){
+    public boolean iWillSeeTopStoriesSection(){
         new ResultPage().topStoriesSectionIsDisplayed();
+        return true;
     }
 
     @Step
