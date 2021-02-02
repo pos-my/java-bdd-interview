@@ -8,6 +8,8 @@ Feature: Search Covid 19 in Malaysia via Google
     And user sees the Common questions sections appear in the search result page
 
   Scenario: Verify clicking MOH website link from search result page redirects to MOH page
-    Given user sees "covid 19 in Malaysia" search result page
-    When user click the MOH website link from the search result page
+    Given user navigates to Google search page
+    And user search for "covid 19 in Malaysia"
+    When user sees "covid 19 in Malaysia" search result page
+    And user click the MOH website link from the search result page
     Then user is redirected to MOH website
