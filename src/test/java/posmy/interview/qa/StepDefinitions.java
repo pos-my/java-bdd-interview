@@ -5,7 +5,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.jupiter.api.AfterAll;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -63,7 +62,6 @@ public class StepDefinitions {
     @And("user click the MOH website link from the search result page")
     public void user_click_MOH_website_link() {
         WebElement mohLink = driver.findElement(By.linkText("COVID-19 MALAYSIA: Home"));
-        assertEquals(mohLink.getText().toLowerCase(), "covid-19 malaysia: home");
         mohLink.click();
     }
 
