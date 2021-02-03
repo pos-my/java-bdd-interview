@@ -7,7 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import posmy.interview.qa.driver.RemoteWebDriverFactory;
 import posmy.interview.qa.page_objects.GoogleHomepage;
 import posmy.interview.qa.page_objects.GoogleSearchResultPage;
 
@@ -22,10 +22,7 @@ public class SearchCovidViaGoogle {
 
     @Before
     public static void setTest() {
-        String projectPath = System.getProperty("user.dir");
-        System.setProperty("webdriver.chrome.driver", projectPath+"/src/test/java/posmy/interview/qa/driver/chromedriver.exe");
-
-        driver = new ChromeDriver();
+        driver = RemoteWebDriverFactory.chrome();
         googling = new GoogleHomepage();
         searchResult = new GoogleSearchResultPage();
         googling.setWebDriver(driver);
