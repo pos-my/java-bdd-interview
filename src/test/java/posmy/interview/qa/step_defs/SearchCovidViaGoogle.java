@@ -52,9 +52,9 @@ public class SearchCovidViaGoogle {
         assertEquals(searchResult.getSection("Top stories"), "Top stories");
     }
 
-    @And("user sees the Common questions sections appear in the search result page")
-    public void user_sees_common_question_section_in_serp() {
-        assertEquals(searchResult.getSection("Common questions"), "Common questions");
+    @And("user sees the Health information sections appear in the search result page")
+    public void user_sees_health_information_section_in_serp() {
+        assertEquals(searchResult.getSection("Health information"), "Health information");
     }
 
     @And("user click the MOH website link from the search result page")

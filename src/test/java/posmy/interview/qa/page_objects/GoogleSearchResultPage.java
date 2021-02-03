@@ -18,13 +18,13 @@ public class GoogleSearchResultPage extends GoogleHomepage {
             return topStories.getText();
         }
 
-        else if (section.equals("Common questions")) {
+        else if (section.equals("Health information")) {
             //scroll down so that the common question section is visible
             JavascriptExecutor jse = ((JavascriptExecutor) driver);
             jse.executeScript("window.scrollTo(0, 3500)");
 
             WebDriverWait wait = new WebDriverWait(driver, 10);
-            WebElement commonQuestion = driver.findElement(By.xpath("//*[text()='Common questions']"));
+            WebElement commonQuestion = driver.findElement(By.xpath("//*[text()='Health information']"));
             return commonQuestion.getText();
         }
 
