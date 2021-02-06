@@ -1,7 +1,6 @@
 package posmy.interview.qa.page_objects;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -19,12 +18,8 @@ public class GoogleSearchResultPage extends GoogleHomepage {
         }
 
         else if (section.equals("Health information")) {
-            //scroll down so that the common question section is visible
-            JavascriptExecutor jse = ((JavascriptExecutor) driver);
-            jse.executeScript("window.scrollTo(0, 3500)");
+            WebElement commonQuestion = driver.findElement(By.xpath("//*[@id=\"kp-wp-tab-overview\"]/div[8]/div[1]/div/div/div/div[2]"));
 
-            WebDriverWait wait = new WebDriverWait(driver, 10);
-            WebElement commonQuestion = driver.findElement(By.xpath("//*[text()='Health information']"));
             return commonQuestion.getText();
         }
 
