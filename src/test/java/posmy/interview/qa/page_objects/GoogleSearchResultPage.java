@@ -32,7 +32,7 @@ public class GoogleSearchResultPage extends GoogleHomepage {
     }
 
     public void clickMOHResult() {
-        WebElement mohLink = driver.findElement(By.linkText("COVID-19 MALAYSIA: Home"));
+        WebElement mohLink = driver.findElement(By.xpath("//*[text()='COVID-19 MALAYSIA: Home']"));
         mohLink.click();
     }
 
