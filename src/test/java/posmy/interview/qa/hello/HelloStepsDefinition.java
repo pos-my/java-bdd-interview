@@ -18,9 +18,4 @@ public class HelloStepsDefinition {
 
     }
 
-    @Then("I will stay")
-    public void iWillStay() {
-        throw new IllegalArgumentException();
-    }
-
 }
