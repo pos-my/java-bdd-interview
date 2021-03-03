@@ -26,3 +26,5 @@ jobs:
       run: mvn test
     - name: Generate Cucumber report
       uses: deblockt/cucumber-report-annotations-action@v1.7
+      with:
+        access-token: ${{ secrets.GITHUB_TOKEN }}
