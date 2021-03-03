@@ -23,7 +23,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Execute Cucumber Scenario
-      run: mvn test
+      run: mvn integration-test
     - name: Generate Cucumber report
       uses: deblockt/cucumber-report-annotations-action@v1.7
       with:
