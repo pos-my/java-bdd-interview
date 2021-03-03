@@ -1,11 +1,20 @@
 package posmy.interview.qa;
 
-import io.cucumber.junit.platform.engine.Cucumber;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Unit test for simple App.
  */
-@Cucumber
-class AppTest {
+public class AppTest {
+
+    /**
+     * Rigorous Test :-)
+     */
+    @Test
+    public void shouldAnswerWithTrue() {
+        assertTrue( true );
+    }
 
 }
