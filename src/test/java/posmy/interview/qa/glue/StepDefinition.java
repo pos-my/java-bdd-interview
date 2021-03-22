@@ -37,7 +37,7 @@ public class StepDefinition {
 
     @And("^common questions section is displayed in the results page$")
     public void common_questions_section_is_displayed_in_the_results_page() {
-
+        //common question section is not displayed
     }
 
     @When("^I click on the MOH Website in the search result$")
