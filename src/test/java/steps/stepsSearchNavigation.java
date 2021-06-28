@@ -14,7 +14,7 @@ public class stepsSearchNavigation {
     private WebDriver driver;
 
     @Given("^user search \"([^\"]*)\" in \"([^\"]*)\"$")
-    public void userSearchIn(String searchTopic, String searchEngine) throws Throwable {
+    public void userSearchIn(String searchTopic, String searchEngine) {
         System.setProperty("webdriver.chrome.driver", "C://chromedriver_win32/chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("http://www.google.com");

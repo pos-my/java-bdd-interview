@@ -1,7 +1,7 @@
 ---
 name: Assignment Submission
 about: To evaluate candidate's assignment submission
-title: 'Search and Navigate'
+title: 'Cucumber BDD Test'
 labels: assignment-submission
 assignees: 'Azri Mangsor'
 
