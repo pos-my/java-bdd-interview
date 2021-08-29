@@ -10,7 +10,8 @@ import static io.github.bonigarcia.wdm.WebDriverManager.chromedriver;
  */
 public class RemoteWebDriverFactory {
 
-    private RemoteWebDriverFactory() {}
+    private RemoteWebDriverFactory() {
+    }
 
     public static RemoteWebDriver chrome() {
         chromedriver().useLocalVersionsPropertiesFirst().setup();

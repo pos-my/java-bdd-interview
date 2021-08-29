@@ -1,0 +1,142 @@
+2021-08-29 22:01:23.313 [main] DEBUG AbstractDriver - Browser Capabilities: Capabilities {acceptInsecureCerts: true, browserName: firefox}
+2021-08-29 22:01:23.512 [main] INFO  TestListener - START posmy.interview.qa.NavigateToMOHTest.navigateToMOH
+2021-08-29 22:01:23.522 [main] WARN  TestListener - SKIP  posmy.interview.qa.NavigateToMOHTest.navigateToMOH
+2021-08-29 22:01:23.522 [main] ERROR TestListener - FAIL  posmy.interview.qa.NavigateToMOHTest.navigateToMOH
+2021-08-29 22:01:23.522 [main] ERROR TestListener - Cannot invoke "com.frameworkium.core.ui.driver.Driver.getWebDriver()" because the return value of "java.lang.ThreadLocal.get()" is null
+java.lang.NullPointerException: Cannot invoke "com.frameworkium.core.ui.driver.Driver.getWebDriver()" because the return value of "java.lang.ThreadLocal.get()" is null
+	at com.frameworkium.core.ui.driver.lifecycle.SingleUseDriverLifecycle.getWebDriver(SingleUseDriverLifecycle.java:35) ~[frameworkium-core-3.0.0.jar:?]
+	at com.frameworkium.core.ui.UITestLifecycle.getWebDriver(UITestLifecycle.java:138) ~[frameworkium-core-3.0.0.jar:?]
+	at com.frameworkium.core.ui.listeners.ScreenshotListener.takeScreenshotAndSaveLocally(ScreenshotListener.java:42) ~[frameworkium-core-3.0.0.jar:?]
+	at com.frameworkium.core.ui.listeners.ScreenshotListener.onTestSkipped(ScreenshotListener.java:36) ~[frameworkium-core-3.0.0.jar:?]
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:87) ~[testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.TestInvoker.runTestResultListener(TestInvoker.java:219) ~[testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.TestInvoker.invokeListenersForSkippedTestResult(TestInvoker.java:447) ~[testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:545) ~[testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173) ~[testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46) ~[testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824) ~[testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146) ~[testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146) ~[testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128) ~[testng-7.4.0.jar:7.4.0]
+	at java.util.ArrayList.forEach(ArrayList.java:1511) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:794) [testng-7.4.0.jar:7.4.0]
+	at org.testng.TestRunner.run(TestRunner.java:596) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [testng-7.4.0.jar:7.4.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212) [testng-7.4.0.jar:7.4.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134) [testng-7.4.0.jar:7.4.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1063) [testng-7.4.0.jar:7.4.0]
+	at org.testng.TestNG.run(TestNG.java:1031) [testng-7.4.0.jar:7.4.0]
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66) [testng-rt.jar:?]
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109) [testng-rt.jar:?]
+2021-08-29 22:01:55.691 [main] DEBUG AbstractDriver - Browser Capabilities: Capabilities {acceptInsecureCerts: true, browserName: firefox}
+2021-08-29 22:01:56.001 [main] INFO  TestListener - START posmy.interview.qa.NavigateToMOHTest.navigateToMOH
+2021-08-29 22:01:56.011 [main] WARN  TestListener - SKIP  posmy.interview.qa.NavigateToMOHTest.navigateToMOH
+2021-08-29 22:01:56.011 [main] ERROR TestListener - FAIL  posmy.interview.qa.NavigateToMOHTest.navigateToMOH
+2021-08-29 22:01:56.011 [main] ERROR TestListener - Cannot invoke "com.frameworkium.core.ui.driver.Driver.getWebDriver()" because the return value of "java.lang.ThreadLocal.get()" is null
+java.lang.NullPointerException: Cannot invoke "com.frameworkium.core.ui.driver.Driver.getWebDriver()" because the return value of "java.lang.ThreadLocal.get()" is null
+	at com.frameworkium.core.ui.driver.lifecycle.SingleUseDriverLifecycle.getWebDriver(SingleUseDriverLifecycle.java:35) ~[frameworkium-core-3.0.0.jar:?]
+	at com.frameworkium.core.ui.UITestLifecycle.getWebDriver(UITestLifecycle.java:138) ~[frameworkium-core-3.0.0.jar:?]
+	at com.frameworkium.core.ui.listeners.ScreenshotListener.takeScreenshotAndSaveLocally(ScreenshotListener.java:42) ~[frameworkium-core-3.0.0.jar:?]
+	at com.frameworkium.core.ui.listeners.ScreenshotListener.onTestSkipped(ScreenshotListener.java:36) ~[frameworkium-core-3.0.0.jar:?]
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:87) ~[testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.TestInvoker.runTestResultListener(TestInvoker.java:219) ~[testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.TestInvoker.invokeListenersForSkippedTestResult(TestInvoker.java:447) ~[testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:545) ~[testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173) ~[testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46) ~[testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824) ~[testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146) ~[testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146) ~[testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128) ~[testng-7.4.0.jar:7.4.0]
+	at java.util.ArrayList.forEach(ArrayList.java:1511) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:794) [testng-7.4.0.jar:7.4.0]
+	at org.testng.TestRunner.run(TestRunner.java:596) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [testng-7.4.0.jar:7.4.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212) [testng-7.4.0.jar:7.4.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134) [testng-7.4.0.jar:7.4.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1063) [testng-7.4.0.jar:7.4.0]
+	at org.testng.TestNG.run(TestNG.java:1031) [testng-7.4.0.jar:7.4.0]
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66) [testng-rt.jar:?]
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109) [testng-rt.jar:?]
+2021-08-29 22:02:33.069 [main] DEBUG AbstractDriver - Browser Capabilities: Capabilities {browserName: chrome, chrome.prefs: {profile.password_manager_enabled: false}, chrome.switches: [--no-default-browser-check]}
+2021-08-29 22:02:35.291 [main] INFO  TestListener - START posmy.interview.qa.NavigateToMOHTest.navigateToMOH
+2021-08-29 22:02:35.498 [main] DEBUG AllureLogger - Logged to allure: Page 'posmy.interview.qa.pages.GoogleSearchPage' successfully loaded
+2021-08-29 22:02:36.578 [main] DEBUG AllureLogger - Logged to allure: Page 'posmy.interview.qa.pages.GoogleSearchPage' successfully loaded
+2021-08-29 22:02:40.157 [main] INFO  GoogleSearchPage - Top Stories Section is displayed: true
+2021-08-29 22:02:40.548 [main] INFO  GoogleSearchPage - Top Result heading is displayed: true
+2021-08-29 22:02:51.728 [main] DEBUG AllureLogger - Logged to allure: Page 'posmy.interview.qa.pages.MOHPage' successfully loaded
+2021-08-29 22:02:51.746 [main] INFO  TestListener - PASS  posmy.interview.qa.NavigateToMOHTest.navigateToMOH
+2021-08-29 22:02:52.268 [main] ERROR AllureProperties - IO problem when writing allure properties file
+java.io.FileNotFoundException: target\allure-results\environment.properties (The system cannot find the path specified)
+	at java.io.FileOutputStream.open0(Native Method) ~[?:?]
+	at java.io.FileOutputStream.open(FileOutputStream.java:291) ~[?:?]
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:234) ~[?:?]
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:123) ~[?:?]
+	at com.frameworkium.core.common.reporting.allure.AllureProperties.save(AllureProperties.java:82) [frameworkium-core-3.0.0.jar:?]
+	at com.frameworkium.core.common.reporting.allure.AllureProperties.createUI(AllureProperties.java:32) [frameworkium-core-3.0.0.jar:?]
+	at com.frameworkium.core.ui.UITestLifecycle.afterTestSuite(UITestLifecycle.java:114) [frameworkium-core-3.0.0.jar:?]
+	at com.frameworkium.core.ui.tests.BaseUITest.afterTestSuiteCleanUp(BaseUITest.java:69) [frameworkium-core-3.0.0.jar:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133) [testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62) [testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385) [testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:344) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [testng-7.4.0.jar:7.4.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212) [testng-7.4.0.jar:7.4.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134) [testng-7.4.0.jar:7.4.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1063) [testng-7.4.0.jar:7.4.0]
+	at org.testng.TestNG.run(TestNG.java:1031) [testng-7.4.0.jar:7.4.0]
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66) [testng-rt.jar:?]
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109) [testng-rt.jar:?]
+2021-08-29 22:08:41.952 [main] DEBUG AbstractDriver - Browser Capabilities: Capabilities {browserName: chrome, chrome.prefs: {profile.password_manager_enabled: false}, chrome.switches: [--no-default-browser-check]}
+2021-08-29 22:08:43.863 [main] INFO  TestListener - START posmy.interview.qa.NavigateToMOHTest.navigateToMOH
+2021-08-29 22:08:44.007 [main] DEBUG AllureLogger - Logged to allure: Page 'posmy.interview.qa.pages.GoogleSearchPage' successfully loaded
+2021-08-29 22:08:45.578 [main] DEBUG AllureLogger - Logged to allure: Page 'posmy.interview.qa.pages.GoogleSearchPage' successfully loaded
+2021-08-29 22:08:48.965 [main] INFO  GoogleSearchPage - Top Stories Section is displayed: true
+2021-08-29 22:08:49.435 [main] INFO  GoogleSearchPage - Top Result heading is displayed: true
+2021-08-29 22:08:59.821 [main] DEBUG AllureLogger - Logged to allure: Page 'posmy.interview.qa.pages.MOHPage' successfully loaded
+2021-08-29 22:08:59.843 [main] INFO  TestListener - PASS  posmy.interview.qa.NavigateToMOHTest.navigateToMOH
+2021-08-29 22:09:00.361 [main] ERROR AllureProperties - IO problem when writing allure properties file
+java.io.FileNotFoundException: target\allure-results\environment.properties (The system cannot find the path specified)
+	at java.io.FileOutputStream.open0(Native Method) ~[?:?]
+	at java.io.FileOutputStream.open(FileOutputStream.java:291) ~[?:?]
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:234) ~[?:?]
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:123) ~[?:?]
+	at com.frameworkium.core.common.reporting.allure.AllureProperties.save(AllureProperties.java:82) [frameworkium-core-3.0.0.jar:?]
+	at com.frameworkium.core.common.reporting.allure.AllureProperties.createUI(AllureProperties.java:32) [frameworkium-core-3.0.0.jar:?]
+	at com.frameworkium.core.ui.UITestLifecycle.afterTestSuite(UITestLifecycle.java:114) [frameworkium-core-3.0.0.jar:?]
+	at com.frameworkium.core.ui.tests.BaseUITest.afterTestSuiteCleanUp(BaseUITest.java:69) [frameworkium-core-3.0.0.jar:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133) [testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62) [testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385) [testng-7.4.0.jar:7.4.0]
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:344) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [testng-7.4.0.jar:7.4.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [testng-7.4.0.jar:7.4.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212) [testng-7.4.0.jar:7.4.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134) [testng-7.4.0.jar:7.4.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1063) [testng-7.4.0.jar:7.4.0]
+	at org.testng.TestNG.run(TestNG.java:1031) [testng-7.4.0.jar:7.4.0]
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66) [testng-rt.jar:?]
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109) [testng-rt.jar:?]
