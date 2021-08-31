@@ -1,1 +1,0 @@
-{"uuid":"5b867ee4-57fa-47fe-b2db-81354a72ff5b","name":"Default Suite","children":["dc055654-0c7e-4738-ad6c-da62f0e4af10"],"befores":[{"name":"initialiseDriverPool","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1630245683217,"stop":1630245683237}],"afters":[],"links":[],"start":1630245683197,"stop":1630245683542}

@@ -21,6 +21,7 @@ public class NavigateToMOHTest extends BaseUITest {
         WebDriver driver;
         String searchText = "covid 19 in Malaysia";
         String mohMainLinkText = "Home | COVID-19 MALAYSIA";
+        String mohUrl = "https://covid-19.moh.gov.my";
         List<String> expectedMOHeading = Arrays.asList("COVID-19 MALAYSIA", "Kementerian Kesihatan Malaysia");
 
         //open browser and go to google search
@@ -44,15 +45,15 @@ public class NavigateToMOHTest extends BaseUITest {
                 .isTrue();
 
         //Click on MOH's website url link and navigate to MOH's home page
-        MOHPage mohPage = CommonServices.clickOnLinkText(driver, MOHPage.class, mohMainLinkText);
+        CommonServices.clickOnLinkText(driver, MOHPage.class, mohMainLinkText);
 
         assertWithMessage("Link Text: " + mohMainLinkText + " does not exist on Search Result page.")
                 .that(driver.getCurrentUrl())
                 .ignoringCase()
-                .equals("https://covid-19.moh.gov.my");
+                .equals(mohUrl);
 
-        //verify MOH Page heading
-        assertWithMessage("MOH Heading is not " + expectedMOHeading)
+        //verify MOH Page title
+        assertWithMessage("Current page title is not " + expectedMOHeading)
                 .that(CommonServices.getBrowserTitle(driver))
                 .ignoringCase()
                 .equals(mohMainLinkText);
