@@ -34,11 +34,6 @@
   <dependencies>
     <dependency>
       <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-java</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.cucumber</groupId>
       <artifactId>cucumber-junit-platform-engine</artifactId>
       <scope>test</scope>
     </dependency>
@@ -183,23 +178,6 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.22.0</version>
-        <configuration>
-          <parallel>classes</parallel>
-          <threadCount>1</threadCount>
-          <systemPropertyVariables>
-            <screenshotDirectory>${project.build.directory}/screenshots}</screenshotDirectory>
-            <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
-            <allure.link.issue.pattern>https://engineering/jira/browse/{}</allure.link.issue.pattern>
-            <allure.link.tms.pattern>https://engineering/jira/browse/{}</allure.link.tms.pattern>
-          </systemPropertyVariables>
-          <includes>
-            <include>**/*UITestRunner.java</include>
-          </includes>
-          <argLine>
-            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
-          </argLine>
-          <failIfNoTests>true</failIfNoTests>
-        </configuration>
       </plugin>
 
       <plugin>
