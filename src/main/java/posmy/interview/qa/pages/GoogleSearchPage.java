@@ -1,45 +1,35 @@
 package posmy.interview.qa.pages;
 
-import com.frameworkium.core.ui.pages.BasePage;
 import io.qameta.allure.Step;
-import org.openqa.selenium.*;
-import org.openqa.selenium.support.FindBy;
-import posmy.interview.qa.util.CommonServices;
-import ru.yandex.qatools.htmlelements.annotations.Name;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchContextException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
-import static posmy.interview.qa.util.constants.genericConstants.defaultGoogleSearchURL;
-
-public class GoogleSearchPage extends BasePage<GoogleSearchPage> {
+public class GoogleSearchPage {
     private final static String HEADING_CSS = "div[role='heading']";
+    private final static String SEARCH_TEXTBOX_CSS = "input[aria-label='Search']";
+    private final static String TOP_STORIES_HEADING_CSS = "a[role='heading link']";
     private WebElement topResultHeading;
+    private RemoteWebDriver driver;
 
-    @Name("Google Search Text box")
-    @FindBy(css = "input[aria-label='Search']")
-    private WebElement googleSearchTextBox;
-
-    @Name("Top Stories Heading")
-    @FindBy(css = "a[role='heading link']")
-    private WebElement topStoriesHeading;
-
-
-    @Step("Open Google URL")
-    public WebDriver navigateToGoogleSearch() {
-        CommonServices.navigateToURL(GoogleSearchPage.class, defaultGoogleSearchURL);
-        CommonServices.maximizeBrowser(driver);
-        return driver;
+    public void initDriver(RemoteWebDriver driver) {
+        this.driver = driver;
     }
 
     @Step("Input value into Google Search text box")
     public GoogleSearchPage inputSearchText(String searchText) {
-        googleSearchTextBox.clear();
-        googleSearchTextBox.sendKeys(searchText);
-        googleSearchTextBox.sendKeys(Keys.ENTER);
+        WebElement searchTextbox = driver.findElement(By.cssSelector(SEARCH_TEXTBOX_CSS));
+        searchTextbox.clear();
+        searchTextbox.sendKeys(searchText);
+        searchTextbox.sendKeys(Keys.ENTER);
         return this;
     }
 
     @Step("Verify Top Stories Section")
     public boolean verifyTopStoriesSection() {
-        logger.info("Top Stories Section is displayed: " + topStoriesHeading.isDisplayed());
+        WebElement topStoriesHeading = driver.findElement(By.cssSelector(TOP_STORIES_HEADING_CSS));
         return topStoriesHeading.isDisplayed();
     }
 
@@ -51,7 +41,6 @@ public class GoogleSearchPage extends BasePage<GoogleSearchPage> {
                         .filter(webElement -> webElement.getText().equals("Top results"))
                         .findFirst()
                         .orElseThrow(() -> new NoSuchContextException("Top Result Heading does not exist"));
-        logger.info("Top Result heading is displayed: " + topResultHeading.isDisplayed());
         return topResultHeading;
     }
 }

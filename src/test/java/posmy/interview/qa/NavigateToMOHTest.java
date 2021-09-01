@@ -1,32 +1,32 @@
 package posmy.interview.qa;
 
-import com.frameworkium.core.ui.tests.BaseUITest;
-import io.qameta.allure.Feature;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 import posmy.interview.qa.pages.GoogleSearchPage;
-import posmy.interview.qa.pages.MOHPage;
 import posmy.interview.qa.util.CommonServices;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static com.google.common.truth.Truth.assertWithMessage;
+import static posmy.interview.qa.driver.RemoteWebDriverFactory.chrome;
+import static posmy.interview.qa.util.CommonServices.openChromeToURL;
+import static posmy.interview.qa.util.constants.genericConstants.defaultGoogleSearchURL;
 
-public class NavigateToMOHTest extends BaseUITest {
+public class NavigateToMOHTest {
 
-    @Feature("Google Search Test")
-    @Test(description = "Navigate by Click on MOH website in the Google search result")
+    @Test
     public void navigateToMOH() {
-        WebDriver driver;
         String searchText = "covid 19 in Malaysia";
         String mohMainLinkText = "Home | COVID-19 MALAYSIA";
         String mohUrl = "https://covid-19.moh.gov.my";
         List<String> expectedMOHeading = Arrays.asList("COVID-19 MALAYSIA", "Kementerian Kesihatan Malaysia");
 
         //open browser and go to google search
-        GoogleSearchPage googleSearchPage = new GoogleSearchPage().get();
-        driver = googleSearchPage.navigateToGoogleSearch();
+        RemoteWebDriver driver = chrome();
+        openChromeToURL(driver, defaultGoogleSearchURL);
+        GoogleSearchPage googleSearchPage = new GoogleSearchPage();
+        googleSearchPage.initDriver(driver);
         googleSearchPage.inputSearchText(searchText);
 
         //Verify Top Stories section exist
@@ -45,7 +45,7 @@ public class NavigateToMOHTest extends BaseUITest {
                 .isTrue();
 
         //Click on MOH's website url link and navigate to MOH's home page
-        CommonServices.clickOnLinkText(driver, MOHPage.class, mohMainLinkText);
+        CommonServices.clickOnLinkText(driver, mohMainLinkText);
 
         assertWithMessage("Link Text: " + mohMainLinkText + " does not exist on Search Result page.")
                 .that(driver.getCurrentUrl())
@@ -54,8 +54,10 @@ public class NavigateToMOHTest extends BaseUITest {
 
         //verify MOH Page title
         assertWithMessage("Current page title is not " + expectedMOHeading)
-                .that(CommonServices.getBrowserTitle(driver))
+                .that(driver.getTitle())
                 .ignoringCase()
                 .equals(mohMainLinkText);
+
+        driver.quit();
     }
 }

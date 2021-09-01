@@ -5,22 +5,28 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import posmy.interview.qa.pages.GoogleSearchPage;
 import posmy.interview.qa.pages.MOHPage;
 import posmy.interview.qa.util.CommonServices;
 
 import static com.google.common.truth.Truth.assertWithMessage;
+import static posmy.interview.qa.driver.RemoteWebDriverFactory.chrome;
+import static posmy.interview.qa.util.CommonServices.openChromeToURL;
+import static posmy.interview.qa.util.constants.genericConstants.defaultGoogleSearchURL;
 
 public class GoogleSearchSteps {
-    private WebDriver driver;
-    private GoogleSearchPage googleSearchPage = new GoogleSearchPage().get();
+    private RemoteWebDriver driver;
+    private GoogleSearchPage googleSearchPage = new GoogleSearchPage();
     private String urlLinkText;
 
     @Step
     @Given("I navigate to Google Search Page")
     public void navigateToDefaultBrowser() {
+        driver = chrome();
+        googleSearchPage.initDriver(driver);
         //open browser and go to google search
-        driver = googleSearchPage.navigateToGoogleSearch();
+        openChromeToURL(driver, defaultGoogleSearchURL);
     }
 
     @Step
@@ -61,8 +67,8 @@ public class GoogleSearchSteps {
     @And("I click on the MOH Link Text on Google Result Page: {string}")
     public void clickOnMOHLinkText(String linktext) {
         //Click on MOH's website url link and navigate to MOH's home page
-        CommonServices.clickOnLinkText(driver, MOHPage.class, linktext);
-        urlLinkText = linktext;
+       CommonServices.clickOnLinkText(driver, linktext);
+       urlLinkText = linktext;
     }
 
     @Step
@@ -79,9 +85,16 @@ public class GoogleSearchSteps {
     public void verifyCurrentPageTitle(String pageTitle) {
         //verify MOH Page title
         assertWithMessage("Current page title is not " + pageTitle)
-                .that(CommonServices.getBrowserTitle(driver))
+                .that(driver.getTitle())
                 .ignoringCase()
                 .equals(pageTitle);
+    }
+
+
+    @Step
+    @And("I close the browser")
+    public void closeBrowser() {
+        driver.quit();
     }
 
 }
