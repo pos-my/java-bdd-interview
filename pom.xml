@@ -18,7 +18,7 @@
     <cucumber.version>6.11.0</cucumber.version>
     <junit.jupiter.version>5.8.0</junit.jupiter.version>
     <selenium.version>3.141.59</selenium.version>
-    <webDriverManager.version>5.0.1</webDriverManager.version>
+    <webDriverManager.version>5.0.2</webDriverManager.version>
   </properties>
 
   <dependencies>
