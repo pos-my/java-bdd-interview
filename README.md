@@ -2,7 +2,7 @@
 BDD automated application that will be used by our candidates.
 
 ## Pre-requisite
-  - Java 11 or later
+  - Java 17 or later
   - Editor of your choice. E.g. IDEA, Eclipse, Netbeans, VS Code, Notepad, etc.
   
 ## Dependencies
