@@ -1,0 +1,23 @@
+//Assessment Test - Search "covid 19 in Malaysia" on Google using cypress with VS code Editor
+describe('Assessment Test', function() 
+{   
+    // Test Scenario 1: Search "covid 19 in Malaysia" on Google and will see search results page
+    //Test Scenario 2: Top stories section is available
+    //Test Scenario 3: Common questions section is available
+    //Test Scenario 4: Click on MOH website in the search result will lead to MOH's website
+    it('GoogleTest Assessment', function() 
+    {
+      cy.visit('https://www.google.com/')
+      cy.get('input[name="q"]').type('covid 19 in Malaysia')
+      cy.get('li:nth-child(1) > div > div.pcTkSc > div.wM6W7d > span').click()
+      cy.get('div#w3bYAd div:nth-child(1) > div:nth-child(1) > a > div.s75CSd.OhScic.AB4Wff').click()
+      cy.get('[href="https://covid-19.moh.gov.my/"] > .LC20lb').click()
+      cy.get('[href="https://covid-19.moh.gov.my/"] > .LC20lb').click()
+     
+    })
+
+  })
+
+  
+
+  
